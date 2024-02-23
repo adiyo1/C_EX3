@@ -60,7 +60,7 @@ while (1) {
         break;
       case 4:
         //printf("List size: %ld\n", StrList_size(ptr2));
-        printf("%d\n", StrList_size(ptr2));
+        printf("%li\n", StrList_size(ptr2));
         break;
       case 5:
         //printf("Enter index: ");
@@ -92,7 +92,8 @@ while (1) {
         StrList_reverse(ptr2);
         break;
       case 11:
-        StrList_clone(ptr2);
+        //StrList_clone(ptr2);
+        StrList_free(ptr2);
         break;
       case 12:
         StrList_sort(ptr2);
@@ -111,7 +112,7 @@ while (1) {
         StrList_isEqual(ptr2, ptr1);
         break;
       case 0:
-        return NULL;
+        return 0;
         printf("the program is over");
         break;
       default:

@@ -45,6 +45,7 @@ StrList* StrList_alloc()
 
 void StrList_free(StrList* StrList)
 {
+    StrList->_size=0;
   if (StrList==NULL) return;
 	Node* p1= StrList->_head;
 	Node* p2;
@@ -53,7 +54,8 @@ void StrList_free(StrList* StrList)
 		p1= p1->_next;
 		Node_free(p2);
 	}
-	free(StrList); 
+    
+	//free(StrList); 
 }
 
 void StrList_insertLast(StrList* StrList, const char* data)
@@ -87,14 +89,23 @@ void StrList_insertLast(StrList* StrList, const char* data)
 
 void StrList_print(const StrList* StrList)
 {
-  const Node* p= StrList->_head;
-	while(p) {
-        printf("%s ", p->_data);
-		//printf("(%.2s)->",p->_data);
-		p= p->_next;
-	}
-    printf("\n");
-	//printf("|| size:%zu\n",StrList->_size);
+    if(StrList_size(StrList)==0)
+    {
+        printf("\n");
+        return;
+    }
+    
+    else{
+        const Node* p= StrList->_head;
+        while(p) {
+            printf("%s ", p->_data);
+            //printf("(%.2s)->",p->_data);
+            p= p->_next;
+        }
+        
+        printf("\n");
+        //printf("|| size:%zu\n",StrList->_size);
+    }
 }
 
 void StrList_insertAt(StrList* StrList, const char* data, int index)
