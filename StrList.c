@@ -96,15 +96,25 @@ void StrList_print(const StrList* StrList)
     }
     
     else{
-        const Node* p= StrList->_head;
-        while(p) {
-            printf("%s ", p->_data);
-            //printf("(%.2s)->",p->_data);
-            p= p->_next;
+        const Node* p = StrList->_head;
+        while (p)
+        {
+            printf("%s", p->_data);
+            if (p->_next != NULL) // Check if there's a next node
+                printf(" ");     // Print a space only if it's not the last node
+            p = p->_next;
         }
-        
         printf("\n");
-        //printf("|| size:%zu\n",StrList->_size);
+        // const Node* p= StrList->_head;
+        // while(p) {
+        //     printf("%s ", p->_data);
+        //     //printf("(%.2s)->",p->_data);
+        //     p= p->_next;
+        // }
+        
+        // printf("\n");
+        // //printf("|| size:%zu\n",StrList->_size);
+        
     }
 }
 

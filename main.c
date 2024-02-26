@@ -105,21 +105,22 @@ while (1) {
           printf("false\n");
         }
         break;
-      case 14:
-        StrList_firstData(ptr2);
-        break;
-      case 15:
-        StrList_isEqual(ptr2, ptr1);
-        break;
+      // case 14:
+      //   StrList_firstData(ptr2);
+      //   break;
+      // case 15:
+      //   StrList_isEqual(ptr2, ptr1);
+      //   break;
       case 0:
-        return 0;
-        printf("the program is over");
-        break;
-      default:
-        printf("Invalid choice\n");
+        //return 0 ;
+        exit(0);
+        // printf("the program is over");
+        // break;
+      // default:
+      //   printf("Invalid choice\n");
     }
   }
 
-
+StrList_free(ptr2);
 return 0;
 }
