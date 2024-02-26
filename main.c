@@ -3,35 +3,17 @@
 #include "StrList.h"
 #include "StrList.h"
 
+
 int main() {
 int choice;
 int index;
-char str[100];
-const char* strings[] = {"a", "b", "c"};
-StrList *ptr1= StrList_alloc();
-//StrList *ptr3= {"i am adi"};
+char str[SizeMaxWord];
+//StrList *ptr1= StrList_alloc();
 StrList *ptr2= StrList_alloc();
-// for (int i=0;i<3;i++){
-// StrList_insertLast(ptr1, strings[i]);
-// }
-//StrList_print(ptr1);
+//StrList *ptr3= StrList_alloc();
 
 while (1) {
-    // printf("\n1. Add strings to the list \n");
-    // printf("2. Add a string at a specific index\n");
-    // printf("3. Print the list\n");
-    // printf("4. Print the list size\n");
-    // printf("5. Print a string at a specific index\n");
-    // printf("6. Print the number of characters in the list\n");
-    // printf("7. Search for a string and count its occurrences\n");
-    // printf("8. Delete all occurrences of a string\n");
-    // printf("9. Delete an element by index\n");
-    // printf("10. Reverse the list\n");
-    // printf("11. Clear the list\n");
-    // printf("12. Sort the list lexicographically\n");
-    // printf("13. Check if the list is sorted\n");
-    // printf("0. Exit\n");
-
+    
     scanf("%d", &choice);
 
     switch (choice) {
@@ -44,7 +26,7 @@ while (1) {
           scanf("%s", str);
           StrList_insertLast(ptr2, str);
         }
-        //StrList_print(ptr2);
+        
         break;
 
       case 2:
@@ -92,7 +74,6 @@ while (1) {
         StrList_reverse(ptr2);
         break;
       case 11:
-        //StrList_clone(ptr2);
         StrList_free(ptr2);
         break;
       case 12:
@@ -111,13 +92,13 @@ while (1) {
       // case 15:
       //   StrList_isEqual(ptr2, ptr1);
       //   break;
+      // case 16:
+      //   ptr3= StrList_clone(ptr2);
+      //   printf("%d",StrList_isEqual(ptr2, ptr3));
+      //   break;
       case 0:
-        //return 0 ;
         exit(0);
         // printf("the program is over");
-        // break;
-      // default:
-      //   printf("Invalid choice\n");
     }
   }
 
